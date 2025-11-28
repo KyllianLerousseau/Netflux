@@ -590,6 +590,7 @@ ROLE_ADMIN
 }
 ---
 
+```
 ## 🔧 Configuration
 
 ### Variables d'environnement Backend (.env.local)
@@ -598,6 +599,7 @@ ROLE_ADMIN
 # Base de données
 DATABASE_URL="postgresql://user:password@127.0.0.1:5432/netflux"
 
+```
 # JWT
 JWT_SECRET_KEY=%kernel.project_dir%/config/jwt/private.pem
 JWT_PUBLIC_KEY=%kernel.project_dir%/config/jwt/public.pem
