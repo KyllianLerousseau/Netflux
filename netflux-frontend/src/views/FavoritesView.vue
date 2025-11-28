@@ -25,40 +25,6 @@ onMounted(async () => {
 
 </script>
 <style scoped>
-:root {
-    /* Dégradé */
-    --bg-start: #434343;
-    --bg-end: #000000;
-
-    /* Accents froids */
-    --blue-ice: #4EA8DE;
-    /* Bleu glacé principal */
-    --blue-ice-light: #74c0fc;
-    /* Lumière froide */
-    --blue-ice-dark: #1c6693;
-    /* Accent profond */
-
-    /* Froids neutres */
-    --frost: #dce4eb;
-    /* Bordures froides / textes clairs */
-    --silver: #9aa6b2;
-    /* Gris froid métallique */
-    --graphite: #5c6770;
-    /* Gris ardoise */
-
-    /* Couleurs complémentaires froides */
-    --cyan-cold: #3bc9db;
-    /* Cyan polaire, très lumineux */
-    --teal-frozen: #0ca6b6;
-    /* Teal glacial */
-    --mint-cold: #a1f2e1;
-    /* Vert d’eau froid */
-
-    /* Neutres généraux */
-    --white: #f2f6f8;
-    --black: #000000;
-}
-
 .favoris-card {
     display: flex;
     justify-content: space-between;
