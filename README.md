@@ -608,10 +608,6 @@ JWT_PASSPHRASE=your_passphrase_here
 # CORS
 CORS_ALLOW_ORIGIN='^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$'
 
-# Mailer (optionnel)
-MAILER_DSN=smtp://user:pass@smtp.example.com:25
----
-
 ## 📖 Documentation API
 
 La documentation interactive de l'API est disponible à :
@@ -632,7 +628,7 @@ La documentation interactive de l'API est disponible à :
 
 ## 👥 Auteurs
 
-- **Kyllian** - *Développement initial* - [VotreGitHub](https://github.com/KyllianLerousseau)
+- **Kyllian** - *Développement initial* - [Mon GitHub](https://github.com/KyllianLerousseau)
 
 ---
 
