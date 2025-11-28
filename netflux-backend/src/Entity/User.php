@@ -56,7 +56,7 @@ use Symfony\Component\Validator\Constraints as Assert;
             name: 'get_user_favorites',
             uriTemplate: '/users/{id}/favorites',
             controller: FavoritesGetController::class,
-            security: "is_granted('ROLE_USER')",
+            security: "is_granted('ROLE_USER') or object.getId() == user.getId()",
             securityMessage: "Vous n'êtes pas connecté."
         ),
         new Post(
@@ -64,14 +64,14 @@ use Symfony\Component\Validator\Constraints as Assert;
             uriTemplate: '/users/{id}/favorites',
             controller: FavoritesAddController::class,
             input: AddFavoriteInput::class,
-            security: "is_granted('ROLE_USER')",
+            security: "is_granted('ROLE_USER') or object.getId() == user.getId()",
             securityMessage: "Vous n'êtes pas connecté."
         ),
         new Delete(
             name: 'delete_user_favorite',
             uriTemplate: '/users/{id}/favorites/{movie_id}',
             controller: FavoritesDeleteController::class,
-            security: "is_granted('ROLE_USER')",
+            security: "is_granted('ROLE_USER') or object.getId() == user.getId()",
             securityMessage: "Vous n'êtes pas connecté."
 
         ),
