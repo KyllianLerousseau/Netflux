@@ -148,7 +148,7 @@ watch(filteredMovies, () => {
     transition: all 0.3s ease;
 }
 
-.card:hover {
+.card.filter:hover {
     transform: translateY(-10px);
     opacity: 0.7;
 }
