@@ -44,7 +44,7 @@ onMounted(() => {
 h1 {
     color: var(--cyan-cold);
     font-weight: bold;
-    font-size: 5rem;
+    font-size: 11rem;
     text-shadow: 6px 4px 4px black;
 }
 
