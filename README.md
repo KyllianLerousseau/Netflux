@@ -45,7 +45,7 @@ cp .env .env.local
 # Éditer .env.local avec vos paramètres de BDD et JWT
 
 # Configuration de la base de données dans .env.local
-# DATABASE_URL="postgresql://user:password@127.0.0.1:5432/netflux?serverVersion=14&charset=utf8"
+# DATABASE_URL="mysql://user:password@127.0.0.1:5432/netflux?serverVersion=14&charset=utf8"
 
 # Créer la base de données
 php bin/console doctrine:database:create
