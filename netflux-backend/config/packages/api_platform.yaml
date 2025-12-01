@@ -13,4 +13,5 @@ api_platform:
             vary: ["Content-Type", "Authorization", "Origin"]
     formats:
         jsonld: ["application/ld+json"]
+        json: ["application/json"]
         multipart: ["multipart/form-data"]

@@ -139,7 +139,7 @@ class Movie
     /**
      * @var Collection<int, Genre>
      */
-    #[ORM\ManyToMany(targetEntity: Genre::class, inversedBy: 'movies', cascade: ['persist'])]
+    #[ORM\ManyToMany(targetEntity: Genre::class, inversedBy: 'movies', cascade: ['persist', 'remove'])]
     #[Groups(['movie:read', 'movie:write'])]
     private Collection $genres;
 

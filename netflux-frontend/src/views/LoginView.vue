@@ -3,7 +3,8 @@
         <form @submit.prevent="submitLogin">
             <h2>Connexion</h2>
             <div v-if="store.isLoading" class="loading">Chargement...</div>
-            <p class="error-msg">{{ store.error }}</p>
+            <p v-else-if="store.error" class="error-msg">{{ store.error }}</p>
+            <p v-else-if="store.succes" class="succes-msg">{{ store.succes }}</p>
             <div class="credentials-container">
                 <label>Email</label>
                 <input v-model="email" type="text" :class="{ error: store.error }">
@@ -38,10 +39,14 @@ const submitLogin = async () => {
     store.isLoading = true;
 
     store.login(email.value, password.value);
+
+    if (store.succes === true) {
+        store.isLoading = false;
+    }
+
 }
 </script>
 <style scoped>
-
 form {
     gap: 22px;
 }
@@ -75,6 +80,13 @@ form {
 
 .error {
     border: 2px solid red;
+}
+
+.succes-msg {
+    color: green;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
 }
 
 @media only screen and (max-width: 600px) {

@@ -24,13 +24,20 @@
     </div>
 
     <div class="profil-footer">
-        <button @click="store.logout()">Déconnexion</button>
+        <button @click="openModal()">Déconnexion</button>
+
+        <Modal :isOpen="modalIsOpen" @close="modalIsOpen = false">
+            <h2>Êtes-vous sûr de vouloir vous déconnecter ?</h2>
+            <button @click="store.logout()">Déconnecter</button>
+            <button class="backBtn" @click="modalIsOpen = false">Annuler</button>
+        </Modal>
     </div>
 
 </template>
 <script setup>
 import { useUserStore } from '@/stores/user';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
+import Modal from '@/components/Modal.vue';
 
 const store = useUserStore();
 
@@ -43,9 +50,10 @@ onMounted(async () => {
 
 const user = store.user;
 
+const modalIsOpen = ref(false);
+const openModal = () => modalIsOpen.value = true;
 </script>
 <style scoped>
-
 .profil-header {
     display: flex;
     flex-direction: column;
@@ -135,6 +143,21 @@ button {
 button:hover {
     transform: scale(1.2);
     background-color: brown;
+}
+
+.backBtn {
+    width: 200px;
+    padding: 10px;
+    box-shadow: 6px 6px 4px black;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px;
+    background-color: var(--blue-ice-dark);
+}
+
+.backBtn:hover {
+    transform: scale(1.2);
+    background-color: var(--blue-ice-light);
 }
 
 .card {

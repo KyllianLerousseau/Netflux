@@ -10,12 +10,13 @@ export const useUserStore = defineStore("user", {
     favorites: [],
     isLoading: false,
     error: null,
+    succes: null,
     errors: {},
   }),
   getters: {
     isAdmin: (state) => {
-      return state.user?.roles?.includes('ROLE_ADMIN') ?? false;
-    }
+      return state.user?.roles?.includes("ROLE_ADMIN") ?? false;
+    },
   },
   actions: {
     initUserFromToken() {
@@ -56,7 +57,11 @@ export const useUserStore = defineStore("user", {
 
         this.initUserFromToken();
 
-        router.push("/profil");
+        this.succes = "Connexion réussie, redirection vers votre profil.";
+        setTimeout(() => {
+          router.push("/profil");
+        }, 2000);
+
       } catch (err) {
         if (err.response?.data?.message) {
           this.error = err.response.data.message;
@@ -66,11 +71,9 @@ export const useUserStore = defineStore("user", {
             const responseData = JSON.parse(err.request.response || "{}");
             this.error = responseData.message || "Erreur serveur inconnue";
           } catch {
-
             this.error = "Erreur serveur non reconnue.";
           }
-        }
-        else {
+        } else {
           this.error = err.message || "Erreur inconnue.";
         }
       } finally {
@@ -87,7 +90,7 @@ export const useUserStore = defineStore("user", {
           password,
           confirmPassword,
         });
-
+        
         router.push("/login");
       } catch (err) {
         if (err.response?.data?.violations) {

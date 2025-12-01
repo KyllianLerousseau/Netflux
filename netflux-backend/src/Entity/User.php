@@ -122,7 +122,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var Collection<int, Movie>
      */
-    #[ORM\ManyToMany(targetEntity: Movie::class, inversedBy: 'users')]
+    #[ORM\ManyToMany(targetEntity: Movie::class, inversedBy: 'users', cascade: ['remove'])]
     private Collection $favoris;
 
     #[ORM\Column(length: 30)]
